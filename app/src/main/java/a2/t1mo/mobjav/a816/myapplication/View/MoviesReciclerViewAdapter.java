@@ -10,8 +10,6 @@ import android.widget.ImageView;
 
 import java.util.List;
 
-import a2.t1mo.mobjav.a816.myapplication.DAO.PeliculasDAO;
-import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
 import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaInfoContainer;
 import a2.t1mo.mobjav.a816.myapplication.R;
 
@@ -29,6 +27,7 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter {
         this.context = context;
     }
 
+    @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View viewDeLaCelda = inflater.inflate(R.layout.fragment_poster, parent, false);
@@ -37,11 +36,18 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter {
         return holderPeliculas;
     }
 
+    @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position){
         PeliculaInfoContainer unaPelicula = listaDePeliculas.get(position);
         HolderPeliculas holderPeliculas = (HolderPeliculas) holder;
         holderPeliculas.movieBinder(unaPelicula);
     }
+
+    @Override
+    public int getItemCount() {
+        return listaDePeliculas.size();
+    }
+
 
     private class HolderPeliculas extends RecyclerView.ViewHolder{
 
