@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaContainer;
+import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaInfoContainer;
 
 /**
  * Created by polialva on 26/10/16.
@@ -17,7 +17,7 @@ public class PeliculasDAO {
 
     public obtenerPelicula getInfoPeliculaJson(Context context){
 
-        PeliculaContainer peliculaContainer = null;
+        PeliculaInfoContainer peliculaInfoContainer = null;
 
         try {
             // ABRIR ARCHIVO
@@ -27,13 +27,13 @@ public class PeliculasDAO {
 
             // USO GSON
             Gson gson = new Gson();
-            peliculaContainer = gson.fromJson(bufferedReader,PeliculaContainer.class);
+            peliculaInfoContainer = gson.fromJson(bufferedReader,PeliculaInfoContainer.class);
 
         }
         catch (Exception e){
             e.printStackTrace();
         }
-        Log.d("tag", peliculaContainer.toString());
-        return peliculaContainer;
+        Log.d("tag", peliculaInfoContainer.toString());
+        return peliculaInfoContainer;
     }
 }
