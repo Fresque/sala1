@@ -1,4 +1,5 @@
-{
+{"results": [
+  {
   "Title": "Batman",
   "Year": "1989",
   "Rated": "PG-13",
@@ -17,8 +18,9 @@
   "imdbRating": "7.6",
   "imdbVotes": "272,388",
   "imdbID": "tt0096895",
-  "Type": "movie",
+  "Type": "movie"},
 
+  {
   "Title": "Inception",
   "Year": "2010",
   "Rated": "PG-13",
@@ -37,8 +39,9 @@
   "imdbRating": "8.8",
   "imdbVotes": "1,489,067",
   "imdbID": "tt1375666",
-  "Type": "movie",
+  "Type": "movie"},
 
+  {
   "Title": "Matrix",
   "Year": "1993–",
   "Rated": "N/A",
@@ -57,8 +60,9 @@
   "imdbRating": "8.4",
   "imdbVotes": "99",
   "imdbID": "tt0106062",
-  "Type": "series",
+  "Type": "series"},
 
+  {
   "Title": "Superman",
   "Year": "1978",
   "Rated": "PG",
@@ -77,8 +81,9 @@
   "imdbRating": "7.3",
   "imdbVotes": "128,042",
   "imdbID": "tt0078346",
-  "Type": "movie",
+  "Type": "movie"},
 
+  {
   "Title": "El gladiador",
   "Year": "2002–",
   "Rated": "N/A",
@@ -99,8 +104,9 @@
   "imdbID": "tt0375331",
   "Type": "series",
   "totalSeasons": "N/A",
-  "Response": "True"
+  "Response": "True"},
 
+  {
   "Title": "Apocalypse Now",
   "Year": "1979",
   "Rated": "R",
@@ -120,8 +126,9 @@
   "imdbVotes": "456,235",
   "imdbID": "tt0078788",
   "Type": "movie",
-  "Response": "True"
+  "Response": "True"},
 
+  {
   "Title": "Pulp Fiction",
   "Year": "1994",
   "Rated": "R",
@@ -141,8 +148,9 @@
   "imdbVotes": "1,343,852",
   "imdbID": "tt0110912",
   "Type": "movie",
-  "Response": "True",
+  "Response": "True"},
 
+  {
   "Title": "Inferno",
   "Year": "1980",
   "Rated": "R",
@@ -161,9 +169,9 @@
   "imdbRating": "6.7",
   "imdbVotes": "12,425",
   "imdbID": "tt0080923",
-  "Type": "movie",
+  "Type": "movie"},
 
-
+  {
   "Title": "El señor de los anillos por Lars von Triers",
   "Year": "2005",
   "Rated": "N/A",
@@ -182,6 +190,5 @@
   "imdbRating": "3.6",
   "imdbVotes": "13",
   "imdbID": "tt0815753",
-  "Type": "movie"
-
-}
+  "Type": "movie"}
+]}

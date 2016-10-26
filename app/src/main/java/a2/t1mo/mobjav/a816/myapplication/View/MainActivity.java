@@ -6,10 +6,10 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaInfoContainer;
+import a2.t1mo.mobjav.a816.myapplication.Controller.PeliculaController;
+import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
 import a2.t1mo.mobjav.a816.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,17 +17,18 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView moviesRecyclerView;
     MoviesReciclerViewAdapter adapter;
 
-    List<PeliculaInfoContainer> listaDePeliculas;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        PeliculaController peliculaController = new PeliculaController();
+        List<Pelicula> peliculasList = peliculaController.peliculaInfo(this);
+
         moviesRecyclerView = (RecyclerView) findViewById(R.id.recyclerViewPosters);
         moviesRecyclerView.setHasFixedSize(true);
 
-        adapter = new MoviesReciclerViewAdapter(this, listaDePeliculas);
+        adapter = new MoviesReciclerViewAdapter(this, peliculasList);
         //Setear listener
 
         moviesRecyclerView.setLayoutManager(new GridLayoutManager(this, 2, LinearLayoutManager.HORIZONTAL, false));

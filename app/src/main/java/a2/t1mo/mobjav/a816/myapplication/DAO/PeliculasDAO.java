@@ -10,16 +10,16 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaInfoContainer;
+import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaListContainer;
 
 /**
  * Created by polialva on 26/10/16.
  */
 public class PeliculasDAO {
 
-    public PeliculaInfoContainer getInfoPeliculaJson(Context context){
+    public PeliculaListContainer getInfoPeliculaJson(Context context){
 
-        PeliculaInfoContainer peliculaInfoContainer = null;
+        PeliculaListContainer peliculaListContainer = null;
 
         try {
             // ABRIR ARCHIVO
@@ -29,13 +29,13 @@ public class PeliculasDAO {
 
             // USO GSON
             Gson gson = new Gson();
-            peliculaInfoContainer = gson.fromJson(bufferedReader,PeliculaInfoContainer.class);
+            peliculaListContainer = gson.fromJson(bufferedReader,PeliculaListContainer.class);
 
         }
         catch (Exception e){
             e.printStackTrace();
         }
-        Log.d("tag", peliculaInfoContainer.toString());
-        return peliculaInfoContainer;
+        Log.d("tag", peliculaListContainer.toString());
+        return peliculaListContainer;
     }
 }

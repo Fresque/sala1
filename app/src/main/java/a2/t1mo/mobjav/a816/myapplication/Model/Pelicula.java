@@ -3,11 +3,10 @@ package a2.t1mo.mobjav.a816.myapplication.Model;
 /**
  * Created by polialva on 26/10/16.
  */
-public class PeliculaInfoContainer {
+public class Pelicula {
 
     private String title;
-    private Integer year;
-//    para que edad es la peli
+    private String year;
     private String rated;
     private String realeased;
     private String runTime;
@@ -19,9 +18,9 @@ public class PeliculaInfoContainer {
     private String language;
     private String country;
     private String oscar;
-    private int poster;
-    private Integer metaScore;
-    private Float imbRating;
+    private String poster;
+    private String metaScore;
+    private String imbRating;
     private String imbVotes;
     private String imbID;
     private String type;
@@ -34,11 +33,11 @@ public class PeliculaInfoContainer {
         this.title = title;
     }
 
-    public Integer getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Integer year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -130,27 +129,27 @@ public class PeliculaInfoContainer {
         this.oscar = oscar;
     }
 
-    public int getPoster() {
+    public String getPoster() {
         return poster;
     }
 
-    public void setPoster(int poster) {
+    public void setPoster(String poster) {
         this.poster = poster;
     }
 
-    public Integer getMetaScore() {
+    public String getMetaScore() {
         return metaScore;
     }
 
-    public void setMetaScore(Integer metaScore) {
+    public void setMetaScore(String metaScore) {
         this.metaScore = metaScore;
     }
 
-    public Float getImbRating() {
+    public String getImbRating() {
         return imbRating;
     }
 
-    public void setImbRating(Float imbRating) {
+    public void setImbRating(String imbRating) {
         this.imbRating = imbRating;
     }
 
