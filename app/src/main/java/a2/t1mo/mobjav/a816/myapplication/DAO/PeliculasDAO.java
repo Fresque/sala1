@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,7 +17,7 @@ import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaInfoContainer;
  */
 public class PeliculasDAO {
 
-    public obtenerPelicula getInfoPeliculaJson(Context context){
+    public PeliculaInfoContainer getInfoPeliculaJson(Context context){
 
         PeliculaInfoContainer peliculaInfoContainer = null;
 

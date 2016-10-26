@@ -11,8 +11,8 @@ import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaInfoContainer;
 public class PeliculaController {
 
     public PeliculaInfoContainer peliculaInfo(Context context){
-        PeliculasDAO weatherDAO = new PeliculasDAO();
-        PeliculasDAO peliculasDAO = weatherDAO.getInfoPeliculaJson(context);
-        return peliculasDAO;
+        PeliculasDAO peliculasDAO = new PeliculasDAO();
+        PeliculaInfoContainer peliculaInfoContainer = peliculasDAO.getInfoPeliculaJson(context);
+        return peliculaInfoContainer;
     }
 }
