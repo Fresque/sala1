@@ -10,7 +10,9 @@ import android.widget.ImageView;
 
 import java.util.List;
 
+import a2.t1mo.mobjav.a816.myapplication.DAO.PeliculasDAO;
 import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
+import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaInfoContainer;
 import a2.t1mo.mobjav.a816.myapplication.R;
 
 /**
@@ -19,10 +21,10 @@ import a2.t1mo.mobjav.a816.myapplication.R;
 
 public class MoviesReciclerViewAdapter extends RecyclerView.Adapter {
 
-    private List<Pelicula> listaDePeliculas;
+    private List<PeliculaInfoContainer> listaDePeliculas;
     private Context context;
 
-    public MoviesReciclerViewAdapter(Context context, List<Pelicula> listaDePeliculas){
+    public MoviesReciclerViewAdapter(Context context, List<PeliculaInfoContainer> listaDePeliculas){
         this.listaDePeliculas = listaDePeliculas;
         this.context = context;
     }
@@ -36,7 +38,7 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter {
     }
 
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position){
-        Pelicula unaPelicula = listaDePeliculas.get(position);
+        PeliculaInfoContainer unaPelicula = listaDePeliculas.get(position);
         HolderPeliculas holderPeliculas = (HolderPeliculas) holder;
         holderPeliculas.movieBinder(unaPelicula);
     }
@@ -49,8 +51,8 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter {
             super(v);
             posterPelicula = (ImageView) itemView.findViewById(R.id.imageViewPoster);
         }
-        public void movieBinder (Pelicula unaPelicula){
-            posterPelicula.setImageResource(unaPelicula.getPoster);
+        public void movieBinder (PeliculaInfoContainer unaPelicula){
+            posterPelicula.setImageResource(unaPelicula.getPoster());
         }
     }
 }
