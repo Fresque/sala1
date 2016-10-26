@@ -19,6 +19,9 @@ public class PeliculasDAO {
 
     public PeliculaInfoContainer getInfoPeliculaJson(Context context){
 
+
+    public PeliculaInfoContainer getInfoPeliculaJson(Context context){
+
         PeliculaInfoContainer peliculaInfoContainer = null;
 
         try {
