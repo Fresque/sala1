@@ -22,7 +22,7 @@ public class PeliculasDAO {
         try {
             // ABRIR ARCHIVO
             AssetManager manager = context.getAssets();
-            InputStream inputStream = manager.open("batman.json");
+            InputStream inputStream = manager.open("datosPeliculas.json");
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
             // USO GSON

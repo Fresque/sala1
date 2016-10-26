@@ -6,5 +6,5 @@ package a2.t1mo.mobjav.a816.myapplication.Model;
 public class PeliculaContainer {
 
     private String Title;
-    
+
 }
