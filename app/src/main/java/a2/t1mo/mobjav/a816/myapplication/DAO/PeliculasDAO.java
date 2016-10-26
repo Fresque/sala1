@@ -15,6 +15,8 @@ import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaInfoContainer;
  */
 public class PeliculasDAO {
 
+
+
     public obtenerPelicula getInfoPeliculaJson(Context context){
 
         PeliculaInfoContainer peliculaInfoContainer = null;
