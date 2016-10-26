@@ -19,7 +19,7 @@ public class PeliculaInfoContainer {
     private String language;
     private String country;
     private String oscar;
-    private String poster;
+    private int poster;
     private Integer metaScore;
     private Float imbRating;
     private String imbVotes;
@@ -130,11 +130,11 @@ public class PeliculaInfoContainer {
         this.oscar = oscar;
     }
 
-    public String getPoster() {
+    public int getPoster() {
         return poster;
     }
 
-    public void setPoster(String poster) {
+    public void setPoster(int poster) {
         this.poster = poster;
     }
 
