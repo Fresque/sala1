@@ -63,15 +63,4 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter {
             posterPelicula.setImageResource(R.drawable.batman);
         }
     }
-    //private class ListenerJuguetes implements View.OnClickListener{
-
-        /*@Override
-        public void onClick(View v) {
-            pint osicion = recyclerViewJuguetes.getChildAdapterPosition((v));
-            Juguete unJugueteAMostrar = adaptadorDeJuguetes.devolverJuguete(posicion);
-
-            Toast.makeText(v.getContext(), "Hicieron click en " + unJugueteAMostrar.getNombre(), Toast.LENGTH_LONG).show();
-
-        }*/
-
 }
