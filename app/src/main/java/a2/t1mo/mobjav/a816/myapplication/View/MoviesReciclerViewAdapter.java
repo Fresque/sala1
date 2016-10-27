@@ -2,19 +2,13 @@ package a2.t1mo.mobjav.a816.myapplication.View;
 
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
@@ -69,7 +63,7 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter {
             posterPelicula.setImageResource(R.drawable.batman);
         }
     }
-    private class ListenerJuguetes implements View.OnClickListener{
+    //private class ListenerJuguetes implements View.OnClickListener{
 
         /*@Override
         public void onClick(View v) {
@@ -79,5 +73,5 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter {
             Toast.makeText(v.getContext(), "Hicieron click en " + unJugueteAMostrar.getNombre(), Toast.LENGTH_LONG).show();
 
         }*/
-    }
+
 }
