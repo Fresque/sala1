@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new MoviesReciclerViewAdapter(this, peliculasList);
         //Setear listener
 
-        moviesRecyclerView.setLayoutManager(new GridLayoutManager(this, 2, LinearLayoutManager.HORIZONTAL, false));
+        moviesRecyclerView.setLayoutManager(new GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false));
         moviesRecyclerView.setAdapter(adapter);
 
 

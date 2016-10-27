@@ -176,4 +176,5 @@ public class Pelicula {
     public void setType(String type) {
         this.type = type;
     }
+
 }
