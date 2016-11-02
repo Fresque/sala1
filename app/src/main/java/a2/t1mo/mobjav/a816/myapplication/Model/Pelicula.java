@@ -1,29 +1,92 @@
 package a2.t1mo.mobjav.a816.myapplication.Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by polialva on 26/10/16.
  */
 public class Pelicula {
 
+    private String poster_path;
+    private boolean adult;
+    private String overview;
+    private String release_date;
+    private List<Integer> genere_ids;
+    private String id;
+    private String original_title;
+    private String original_language;
     private String title;
-    private String year;
-    private String rated;
-    private String realeased;
-    private String runTime;
-    private String genre;
-    private String director;
-    private String writer;
-    private String actors;
-    private String plot;
-    private String language;
-    private String country;
-    private String oscar;
-    private String poster;
-    private String metaScore;
-    private String imbRating;
-    private String imbVotes;
-    private String imbID;
-    private String type;
+    private String backdrop_path;
+    private float popularity;
+    private int vote_count;
+    private boolean video;
+    private float vote_average;
+
+
+    public String getPoster_path() {
+        return poster_path;
+    }
+
+    public void setPoster_path(String poster_path) {
+        this.poster_path = poster_path;
+    }
+
+    public boolean isAdult() {
+        return adult;
+    }
+
+    public void setAdult(boolean adult) {
+        this.adult = adult;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    public String getRelease_date() {
+        return release_date;
+    }
+
+    public void setRelease_date(String release_date) {
+        this.release_date = release_date;
+    }
+
+    public List<Integer> getGenere_ids() {
+        return genere_ids;
+    }
+
+    public void setGenere_ids(List<Integer> genere_ids) {
+        this.genere_ids = genere_ids;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getOriginal_title() {
+        return original_title;
+    }
+
+    public void setOriginal_title(String original_title) {
+        this.original_title = original_title;
+    }
+
+    public String getOriginal_language() {
+        return original_language;
+    }
+
+    public void setOriginal_language(String original_language) {
+        this.original_language = original_language;
+    }
 
     public String getTitle() {
         return title;
@@ -33,148 +96,44 @@ public class Pelicula {
         this.title = title;
     }
 
-    public String getYear() {
-        return year;
+    public String getBackdrop_path() {
+        return backdrop_path;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setBackdrop_path(String backdrop_path) {
+        this.backdrop_path = backdrop_path;
     }
 
-    public String getRated() {
-        return rated;
+    public float getPopularity() {
+        return popularity;
     }
 
-    public void setRated(String rated) {
-        this.rated = rated;
+    public void setPopularity(float popularity) {
+        this.popularity = popularity;
     }
 
-    public String getRealeased() {
-        return realeased;
+    public int getVote_count() {
+        return vote_count;
     }
 
-    public void setRealeased(String realeased) {
-        this.realeased = realeased;
+    public void setVote_count(int vote_count) {
+        this.vote_count = vote_count;
     }
 
-    public String getRunTime() {
-        return runTime;
+    public boolean isVideo() {
+        return video;
     }
 
-    public void setRunTime(String runTime) {
-        this.runTime = runTime;
+    public void setVideo(boolean video) {
+        this.video = video;
     }
 
-    public String getGenre() {
-        return genre;
+    public float getVote_average() {
+        return vote_average;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public String getWriter() {
-        return writer;
-    }
-
-    public void setWriter(String writer) {
-        this.writer = writer;
-    }
-
-    public String getActors() {
-        return actors;
-    }
-
-    public void setActors(String actors) {
-        this.actors = actors;
-    }
-
-    public String getPlot() {
-        return plot;
-    }
-
-    public void setPlot(String plot) {
-        this.plot = plot;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getOscar() {
-        return oscar;
-    }
-
-    public void setOscar(String oscar) {
-        this.oscar = oscar;
-    }
-
-    public String getPoster() {
-        return poster;
-    }
-
-    public void setPoster(String poster) {
-        this.poster = poster;
-    }
-
-    public String getMetaScore() {
-        return metaScore;
-    }
-
-    public void setMetaScore(String metaScore) {
-        this.metaScore = metaScore;
-    }
-
-    public String getImbRating() {
-        return imbRating;
-    }
-
-    public void setImbRating(String imbRating) {
-        this.imbRating = imbRating;
-    }
-
-    public String getImbVotes() {
-        return imbVotes;
-    }
-
-    public void setImbVotes(String imbVotes) {
-        this.imbVotes = imbVotes;
-    }
-
-    public String getImbID() {
-        return imbID;
-    }
-
-    public void setImbID(String imbID) {
-        this.imbID = imbID;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public void setVote_average(float vote_average) {
+        this.vote_average = vote_average;
     }
 
 }

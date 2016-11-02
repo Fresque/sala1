@@ -1,9 +1,6 @@
 package a2.t1mo.mobjav.a816.myapplication.View;
 
 
-//MODIFICADO!
-
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -11,11 +8,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import java.util.List;
-
 import a2.t1mo.mobjav.a816.myapplication.Controller.PeliculaController;
 import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
+import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaListContainer;
 import a2.t1mo.mobjav.a816.myapplication.R;
+import a2.t1mo.mobjav.a816.myapplication.Util.ResultListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,24 +25,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         PeliculaController peliculaController = new PeliculaController();
-        List<Pelicula> peliculasList = peliculaController.peliculaInfo(this);
+        ResultListenerView resultListener = new ResultListenerView();
 
-        moviesRecyclerView = (RecyclerView) findViewById(R.id.recyclerViewPosters);
-        moviesRecyclerView.setHasFixedSize(true);
-
-        adapter = new MoviesReciclerViewAdapter(this, peliculasList);
-        adapter.setListener(new ListenerJuguetes());
-
-        moviesRecyclerView.setLayoutManager(new GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false));
-        moviesRecyclerView.setAdapter(adapter);
-
+        peliculaController.obtenerPeliculasPopulares(MainActivity.this, resultListener);
 
     }
 
-    private class ListenerJuguetes implements View.OnClickListener {
+    public class ResultListenerView implements ResultListener<PeliculaListContainer> {
 
         @Override
-        public void onClick(View v) {
+        public void finish(PeliculaListContainer peliculaListContainer) {
+            //QUE HACE LA VISTA CUANDO RECIBE EL RESULTADO
+            //MUESTRA LA PELICULA
+            moviesRecyclerView = (RecyclerView) findViewById(R.id.recyclerViewPosters);
+            moviesRecyclerView.setHasFixedSize(true);
+
+            adapter = new MoviesReciclerViewAdapter(MainActivity.this, peliculaListContainer.getResults() );
+            adapter.setListener(new ListenerDeClicks());
+
+            moviesRecyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, 2, LinearLayoutManager.VERTICAL, false));
+            moviesRecyclerView.setAdapter(adapter);
+
+        }
+    }
+
+    private class ListenerDeClicks implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {/*
             int posicion = moviesRecyclerView.getChildAdapterPosition((v));
             Pelicula unaPeliculaAMostrar = adapter.devolverPelicula(posicion);
 
@@ -61,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             bundle.putString("sinopsis", unaPeliculaAMostrar.getPlot());
 
             intent.putExtras(bundle);
-            startActivity(intent);
+            startActivity(intent);*/
 
         }
     }

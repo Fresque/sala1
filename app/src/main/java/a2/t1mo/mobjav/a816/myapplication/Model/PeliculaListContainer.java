@@ -1,5 +1,6 @@
 package a2.t1mo.mobjav.a816.myapplication.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,13 +9,17 @@ import java.util.List;
 
 public class PeliculaListContainer {
 
-    List<Pelicula> results;
+    private ArrayList<Pelicula> results;
 
-    public List<Pelicula> getResults() {
+    public Pelicula getPelicula(int position){
+        return results.get(position);
+    }
+
+    public ArrayList<Pelicula> getResults() {
         return results;
     }
 
-    public void setResults(List<Pelicula> results) {
+    public void setResults(ArrayList<Pelicula> results) {
         this.results = results;
     }
 }

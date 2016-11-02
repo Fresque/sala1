@@ -9,9 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
+import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaListContainer;
 import a2.t1mo.mobjav.a816.myapplication.R;
 
 /**
@@ -20,11 +24,11 @@ import a2.t1mo.mobjav.a816.myapplication.R;
 
 public class MoviesReciclerViewAdapter extends RecyclerView.Adapter implements View.OnClickListener{
 
-    private List<Pelicula> listaDePeliculas;
+    private ArrayList<Pelicula> listaDePeliculas;
     private Context context;
     private View.OnClickListener listener;
 
-    public MoviesReciclerViewAdapter(Context context, List<Pelicula> listaDePeliculas){
+    public MoviesReciclerViewAdapter(Context context, ArrayList<Pelicula> listaDePeliculas){
         this.listaDePeliculas = listaDePeliculas;
         this.context = context;
     }
@@ -64,6 +68,7 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter implements V
     }
 
 
+    //HOLDER
     private class HolderPeliculas extends RecyclerView.ViewHolder{
 
         private ImageView posterPelicula;
@@ -73,8 +78,8 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter implements V
             posterPelicula = (ImageView) itemView.findViewById(R.id.imageViewPoster);
         }
         public void movieBinder (Pelicula unaPelicula){
-
-            posterPelicula.setImageResource(R.drawable.batman);
+            //posterPelicula.setImageResource(R.drawable.batman);
+            Picasso.with(context).load("https://image.tmdb.org/t/p/w500/" + unaPelicula.getPoster_path()).into(posterPelicula);
         }
     }
 }
