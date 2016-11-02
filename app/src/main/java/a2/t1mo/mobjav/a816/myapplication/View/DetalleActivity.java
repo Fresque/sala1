@@ -16,7 +16,7 @@ public class DetalleActivity extends AppCompatActivity {
 
 
 
-    @Override
+    /*@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
@@ -44,6 +44,6 @@ public class DetalleActivity extends AppCompatActivity {
         directorTextView.setText(director);
         sinopsisTextView.setText(sinopsis);
 
-    }
+    }*/
 
 }
