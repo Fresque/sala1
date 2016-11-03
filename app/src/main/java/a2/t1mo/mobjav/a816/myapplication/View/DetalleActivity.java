@@ -16,7 +16,7 @@ public class DetalleActivity extends AppCompatActivity {
 
 
 
-    /*@Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
@@ -39,7 +39,7 @@ public class DetalleActivity extends AppCompatActivity {
         TextView directorTextView = (TextView)findViewById(R.id.textViewDirector);
         TextView sinopsisTextView = (TextView)findViewById(R.id.textViewSinopsis);
 
-        posterImageView.setImageResource(R.drawable.batman);
+//        posterImageView.setImageResource(R.drawable.batman);
         titleTextView.setText(title);
         actorsTextView.setText(actors);
         countryTextView.setText(country);
@@ -47,7 +47,8 @@ public class DetalleActivity extends AppCompatActivity {
         sinopsisTextView.setText(sinopsis);
 
         realizeDateTextView.setText(realizeDate);
+        sinopsisTextView.setText(sinopsis);
 
 
-    }*/
+    }
 }
