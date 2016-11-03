@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import a2.t1mo.mobjav.a816.myapplication.R;
@@ -30,8 +31,9 @@ public class DetalleActivity extends AppCompatActivity {
         String director = (String) bundle.get("director");
         String sinopsis = (String) bundle.get("sinopsis");
         String realizeDate = (String) bundle.get("realizeDate");
+        String posterPelicula = (String) bundle.get("poster");
 
-        ImageView posterImageView = (ImageView)findViewById(R.id.imageViewPoster);
+        ImageView posterImageView = (ImageView)findViewById(R.id.imagenFondoDetalle);
         TextView titleTextView = (TextView)findViewById(R.id.textViewTitulo);
         TextView realizeDateTextView = (TextView)findViewById(R.id.realizeDateDetalleView);
         TextView actorsTextView = (TextView)findViewById(R.id.textViewActores);
@@ -49,6 +51,7 @@ public class DetalleActivity extends AppCompatActivity {
         realizeDateTextView.setText(realizeDate);
         sinopsisTextView.setText(sinopsis);
 
+        Glide.with(DetalleActivity.this).load("https://image.tmdb.org/t/p/w500/" + posterPelicula.into(posterPelicula);
 
     }
 }

@@ -1,6 +1,7 @@
 package a2.t1mo.mobjav.a816.myapplication.View;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*private class ListenerDeClicks implements View.OnClickListener {
+    private class ListenerDeClicks implements View.OnClickListener {
 
         @Override
         public void onClick(View v) {
@@ -62,17 +63,18 @@ public class MainActivity extends AppCompatActivity {
             Bundle bundle = new Bundle();
 
             bundle.putString("titulo", unaPeliculaAMostrar.getTitle());
-            bundle.putString("actors", unaPeliculaAMostrar.getActors());
+            bundle.putString("actors", unaPeliculaAMostrar.getActors);
             bundle.putString("country", unaPeliculaAMostrar.getCountry());
             bundle.putString("director", unaPeliculaAMostrar.getDirector());
             bundle.putString("sinopsis", unaPeliculaAMostrar.getPlot());
-            bundle.putString("realizeDate" unaPeliculaAMostrar.getRelease_date());
+            bundle.putString("realizeDate", unaPeliculaAMostrar.getRelease_date());
+            bundle.putString("poster", unaPeliculaAMostrar.getPoster_path());
 
             intent.putExtras(bundle);
             startActivity(intent);
 
         }
-    }*/
+    }
 
 
 }
