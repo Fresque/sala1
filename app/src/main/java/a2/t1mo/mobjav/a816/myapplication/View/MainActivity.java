@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private class ListenerDeClicks implements View.OnClickListener {
+    /*private class ListenerDeClicks implements View.OnClickListener {
 
         @Override
-        public void onClick(View v) {/*
+        public void onClick(View v) {
             int posicion = moviesRecyclerView.getChildAdapterPosition((v));
             Pelicula unaPeliculaAMostrar = adapter.devolverPelicula(posicion);
 
@@ -66,12 +66,13 @@ public class MainActivity extends AppCompatActivity {
             bundle.putString("country", unaPeliculaAMostrar.getCountry());
             bundle.putString("director", unaPeliculaAMostrar.getDirector());
             bundle.putString("sinopsis", unaPeliculaAMostrar.getPlot());
+            bundle.putString("realizeDate" unaPeliculaAMostrar.getRelease_date());
 
             intent.putExtras(bundle);
-            startActivity(intent);*/
+            startActivity(intent);
 
         }
-    }
+    }*/
 
 
 }

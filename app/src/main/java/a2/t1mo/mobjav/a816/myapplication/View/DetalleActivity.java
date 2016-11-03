@@ -29,9 +29,11 @@ public class DetalleActivity extends AppCompatActivity {
         String country = (String) bundle.get("country");
         String director = (String) bundle.get("director");
         String sinopsis = (String) bundle.get("sinopsis");
+        String realizeDate = (String) bundle.get("realizeDate");
 
         ImageView posterImageView = (ImageView)findViewById(R.id.imageViewPoster);
         TextView titleTextView = (TextView)findViewById(R.id.textViewTitulo);
+        TextView realizeDateTextView = (TextView)findViewById(R.id.realizeDateDetalleView);
         TextView actorsTextView = (TextView)findViewById(R.id.textViewActores);
         TextView countryTextView = (TextView)findViewById(R.id.textViewPais);
         TextView directorTextView = (TextView)findViewById(R.id.textViewDirector);
@@ -44,6 +46,8 @@ public class DetalleActivity extends AppCompatActivity {
         directorTextView.setText(director);
         sinopsisTextView.setText(sinopsis);
 
-    }*/
+        realizeDateTextView.setText(realizeDate);
 
+
+    }*/
 }
