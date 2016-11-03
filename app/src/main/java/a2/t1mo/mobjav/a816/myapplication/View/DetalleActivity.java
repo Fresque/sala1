@@ -51,7 +51,7 @@ public class DetalleActivity extends AppCompatActivity {
         realizeDateTextView.setText(realizeDate);
         sinopsisTextView.setText(sinopsis);
 
-        Glide.with(DetalleActivity.this).load("https://image.tmdb.org/t/p/w500/" + posterPelicula.into(posterPelicula);
+        Glide.with(DetalleActivity.this).load("https://image.tmdb.org/t/p/w500/" + posterPelicula).into(posterImageView);
 
     }
 }
