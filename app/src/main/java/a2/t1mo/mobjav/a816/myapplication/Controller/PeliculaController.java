@@ -16,13 +16,14 @@ public class PeliculaController {
 
     private ResultListener<PeliculaListContainer> resultListenerView;
 
-    public void obtenerPeliculasPopulares (Context context, ResultListener<PeliculaListContainer> resultListenerView){
+    public void obtenerPeliculas(Context context, ResultListener<PeliculaListContainer> resultListenerView, String url){
         //PEDIRLE AL DAO UNA PELICULA
         PeliculasDAO peliculasDAO = new PeliculasDAO();
         ResultListenerController resultListenerController = new ResultListenerController();
         this.resultListenerView = resultListenerView;
-        peliculasDAO.obtenerMoviesJSon(context, resultListenerController);
+        peliculasDAO.obtenerMoviesJSon(context, resultListenerController, url);
     }
+
 
     private class ResultListenerController implements ResultListener<PeliculaListContainer> {
 

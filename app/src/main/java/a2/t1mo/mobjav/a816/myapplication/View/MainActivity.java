@@ -1,7 +1,9 @@
 package a2.t1mo.mobjav.a816.myapplication.View;
 
 
+import android.support.v4.app.FragmentActivity;
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,25 +12,35 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import a2.t1mo.mobjav.a816.myapplication.Controller.PeliculaController;
-import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
 import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaListContainer;
 import a2.t1mo.mobjav.a816.myapplication.R;
 import a2.t1mo.mobjav.a816.myapplication.Util.ResultListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
-    RecyclerView moviesRecyclerView;
-    MoviesReciclerViewAdapter adapter;
+    //ADAPTER VIEWPAGER
+    MoviesViewPagerAdapter moviesViewPagerAdapter;
+    ViewPager mViewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PeliculaController peliculaController = new PeliculaController();
-        ResultListenerView resultListener = new ResultListenerView();
 
-        peliculaController.obtenerPeliculasPopulares(MainActivity.this, resultListener);
+
+
+        // SETEA EL VIEW PAGER QUE EN UN FUTURO VA A CONTENER LOS DIFERENTES RECYCLERS
+        moviesViewPagerAdapter = new MoviesViewPagerAdapter(getSupportFragmentManager());
+
+        mViewPager = (ViewPager)findViewById(R.id.viewPagerPrincipal);
+        mViewPager.setAdapter(moviesViewPagerAdapter);
+
+
+//-------------------------------------------------------------------------------------
+
+
 
     }
 
@@ -36,16 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void finish(PeliculaListContainer peliculaListContainer) {
-            //QUE HACE LA VISTA CUANDO RECIBE EL RESULTADO
-            //MUESTRA LA PELICULA
-            moviesRecyclerView = (RecyclerView) findViewById(R.id.recyclerViewPosters);
-            moviesRecyclerView.setHasFixedSize(true);
 
-            adapter = new MoviesReciclerViewAdapter(MainActivity.this, peliculaListContainer.getResults() );
-            adapter.setListener(new ListenerDeClicks());
-
-            moviesRecyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, 3, LinearLayoutManager.VERTICAL, false));
-            moviesRecyclerView.setAdapter(adapter);
 
         }
     }

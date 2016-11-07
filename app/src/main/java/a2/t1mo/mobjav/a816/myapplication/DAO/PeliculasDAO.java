@@ -20,9 +20,9 @@ import a2.t1mo.mobjav.a816.myapplication.Util.HTTPConnectionManager;
  */
 public class PeliculasDAO {
 
-    public void obtenerMoviesJSon(Context context, ResultListener<PeliculaListContainer> resultListenerController){
+    public void obtenerMoviesJSon(Context context, ResultListener<PeliculaListContainer> resultListenerController, String url){
 
-        LeerdeJSONSAsynctask readFromJSONAsyncTask = new LeerdeJSONSAsynctask(context, resultListenerController);
+        LeerdeJSONSAsynctask readFromJSONAsyncTask = new LeerdeJSONSAsynctask(context, resultListenerController, url);
         readFromJSONAsyncTask.execute();
     }
 
@@ -30,10 +30,12 @@ public class PeliculasDAO {
 
         private Context context;
         private ResultListener<PeliculaListContainer> resultListenerController;
+        private String url;
 
-        public LeerdeJSONSAsynctask(Context context, ResultListener<PeliculaListContainer> resultListenerController) {
+        public LeerdeJSONSAsynctask(Context context, ResultListener<PeliculaListContainer> resultListenerController, String url) {
             this.context = context;
             this.resultListenerController = resultListenerController;
+            this.url = url;
         }
 
         @Override
@@ -44,7 +46,7 @@ public class PeliculasDAO {
             try {
                 //BUSQUEDA EN INTERNET
                 HTTPConnectionManager httpConnectionManager = new HTTPConnectionManager();
-                InputStream newsJson = httpConnectionManager.getRequestStream("https://api.themoviedb.org/3/movie/popular?api_key=01a81d06ce53d8e3ef9e380989ea4f24&language=en-US%22");
+                InputStream newsJson = httpConnectionManager.getRequestStream(url); //usa el url que le pasa el .execute
 
                 //PARSEO GSON
                 BufferedReader bufferReaderIn = new BufferedReader(new InputStreamReader(newsJson));
@@ -65,7 +67,6 @@ public class PeliculasDAO {
             resultListenerController.finish(listaDePeliculas);
         }
     }
-
 
 
 }
