@@ -1,4 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/peliculasAccionFragment"
+            android:title="Peliculas Accion">
+        </item>
+
+        <item
+            android:id="@+id/peliculasAventuraFragment"
+            android:title="Peliculas Aventura">
+        </item>
+
+        <item
+            android:id="@+id/peliculasAnimacionFragment"
+            android:title="Peliculas Animacion">
+        </item>
+
+        <item
+            android:id="@+id/peliculasComediaFragment"
+            android:title="Peliculas Comedia">
+        </item>
+
+        <item
+            android:id="@+id/peliculasCrimenFragment"
+            android:title="Peliculas Crimen">
+        </item>
+
+        <item
+            android:id="@+id/peliculasDocumentalFragment"
+            android:title="Peliculas Documental">
+        </item>
+
+        <item
+            android:id="@+id/peliculasDramaFragment"
+            android:title="Peliculas Drama">
+        </item>
+
+        <item
+            android:id="@+id/peliculasFamiliaFragment"
+            android:title="Peliculas Familia">
+        </item>
+
+        <item
+            android:id="@+id/peliculasFantasiaFragment"
+            android:title="Peliculas Fantasia">
+        </item>
+
+        <item
+            android:id="@+id/peliculasHistoriaFragment"
+            android:title="Peliculas Historia">
+        </item>
+
+        <item
+            android:id="@+id/peliculasTerrorFragment"
+            android:title="Peliculas Terror">
+        </item>
+
+        <item
+            android:id="@+id/peliculasMusicaFragment"
+            android:title="Peliculas Musica">
+        </item>
+
+        <item
+            android:id="@+id/peliculasMisterioFragment"
+            android:title="Peliculas Misterio">
+        </item>
+
+        <item
+            android:id="@+id/peliculasRomanceFragment"
+            android:title="Peliculas Romance">
+        </item>
+
+        <item
+            android:id="@+id/peliculasCienciaFiccionFragment"
+            android:title="Peliculas Ciencia Ficcion">
+        </item>
+
+        <item
+            android:id="@+id/peliculasTVMovie"
+            android:title="Peliculas TV Movie">
+        </item>
+
+        <item
+            android:id="@+id/peliculasThriller"
+            android:title="Peliculas Thriller">
+        </item>
+
+        <item
+            android:id="@+id/peliculasGuerra"
+            android:title="Peliculas Guerra">
+        </item>
+
+        <item
+            android:id="@+id/peliculasWestern"
+            android:title="Peliculas Western">
+        </item>
+
+
+    </group>
 </menu>
