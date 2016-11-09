@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import a2.t1mo.mobjav.a816.myapplication.R;
 
 /**
@@ -22,7 +24,10 @@ public class DetalleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
 
-        Intent intent = getIntent();
+        //TODA ESTA ACTIVITY ESTA SIN HACER!
+
+
+        /*Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
         String title = (String) bundle.get("title");
@@ -51,7 +56,7 @@ public class DetalleActivity extends AppCompatActivity {
         realizeDateTextView.setText(realizeDate);
         sinopsisTextView.setText(sinopsis);
 
-        Glide.with(DetalleActivity.this).load("https://image.tmdb.org/t/p/w500/" + posterPelicula).into(posterImageView);
+        Picasso.with(DetalleActivity.this).load("https://image.tmdb.org/t/p/w500/" + posterPelicula).into(posterImageView);*/
 
     }
 }

@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,12 +70,26 @@ public class MoviesViewPagerFragment extends Fragment {
 
         adapter = new MoviesReciclerViewAdapter(getActivity());
         adapter.setListaDePeliculas(peliculaList);
-        //adapter.setListener(new MainActivity.ListenerDeClicks());
+        adapter.setListener(new ListenerDeClicks());
 
         moviesRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3, LinearLayoutManager.VERTICAL, false));
         moviesRecyclerView.setAdapter(adapter);
 
 
         return fragmentView;
+    }
+
+    private class ListenerDeClicks implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            int posicion = moviesRecyclerView.getChildAdapterPosition((v));
+            Pelicula unaPeliculaAMostrar = adapter.devolverPelicula(posicion);
+
+            Toast.makeText(v.getContext(), "Hicieron click en " + unaPeliculaAMostrar.getTitle(), Toast.LENGTH_LONG).show();
+
+
+
+        }
     }
 }

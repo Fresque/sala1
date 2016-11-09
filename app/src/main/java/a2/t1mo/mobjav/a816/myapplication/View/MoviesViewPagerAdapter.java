@@ -18,7 +18,6 @@ public class MoviesViewPagerAdapter extends FragmentPagerAdapter {
     public MoviesViewPagerAdapter(FragmentManager fm) {
         super(fm);
 
-        //listaDeFragmentos.add(MoviesViewPagerFragment.nuevoFragment("https://api.themoviedb.org/3/movie/latest?api_key=01a81d06ce53d8e3ef9e380989ea4f24&language=en-US"));
         listaDeFragmentos.add(MoviesViewPagerFragment.nuevoFragment("https://api.themoviedb.org/3/movie/now_playing?api_key=01a81d06ce53d8e3ef9e380989ea4f24&language=en-US"));
         listaDeFragmentos.add(MoviesViewPagerFragment.nuevoFragment("https://api.themoviedb.org/3/movie/popular?api_key=01a81d06ce53d8e3ef9e380989ea4f24&language=en-US"));
         listaDeFragmentos.add(MoviesViewPagerFragment.nuevoFragment("https://api.themoviedb.org/3/movie/top_rated?api_key=01a81d06ce53d8e3ef9e380989ea4f24&language=en-US"));
@@ -33,6 +32,17 @@ public class MoviesViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return listaDeFragmentos.size();
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        switch (position){
+            case 0: return "Now Playing";
+            case 1: return "Popular";
+            case 2: return "Top Rated";
+            case 3: return "Upcoming";
+        }
+        return null;
     }
 
 
