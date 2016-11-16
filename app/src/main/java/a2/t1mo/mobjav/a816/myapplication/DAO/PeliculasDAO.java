@@ -1,7 +1,6 @@
 package a2.t1mo.mobjav.a816.myapplication.DAO;
 
 import android.content.Context;
-import android.graphics.Movie;
 import android.os.AsyncTask;
 
 import com.google.gson.Gson;

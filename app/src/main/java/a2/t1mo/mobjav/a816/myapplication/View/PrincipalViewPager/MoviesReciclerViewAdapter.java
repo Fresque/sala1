@@ -1,4 +1,4 @@
-package a2.t1mo.mobjav.a816.myapplication.View;
+package a2.t1mo.mobjav.a816.myapplication.View.PrincipalViewPager;
 
 
 import android.content.Context;
@@ -9,10 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
@@ -27,6 +25,7 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter implements V
     private List<Pelicula> listaDePeliculas;
     private Context context;
     private View.OnClickListener listener;
+
 
     public MoviesReciclerViewAdapter(Context context){
         this.context = context;

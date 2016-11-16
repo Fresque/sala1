@@ -1,5 +1,6 @@
-package a2.t1mo.mobjav.a816.myapplication.View;
+package a2.t1mo.mobjav.a816.myapplication.View.PrincipalViewPager;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -8,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +27,7 @@ public class MoviesViewPagerFragment extends Fragment {
     RecyclerView moviesRecyclerView;
     MoviesReciclerViewAdapter adapter;
     List<Pelicula> peliculaList;
+    ComunicadorEntreFragmentYActivity activityActual;
 
 
     public static MoviesViewPagerFragment nuevoFragment(String url){
@@ -58,7 +59,8 @@ public class MoviesViewPagerFragment extends Fragment {
             @Override
             public void finish(PeliculaListContainer resultado) {
 
-                adapter.setListaDePeliculas(resultado.getResults());
+                peliculaList = resultado.getResults();
+                adapter.setListaDePeliculas(peliculaList);
                 adapter.notifyDataSetChanged();
             }
         },url);
@@ -84,12 +86,22 @@ public class MoviesViewPagerFragment extends Fragment {
         @Override
         public void onClick(View v) {
             int posicion = moviesRecyclerView.getChildAdapterPosition((v));
-            Pelicula unaPeliculaAMostrar = adapter.devolverPelicula(posicion);
-
-            Toast.makeText(v.getContext(), "Hicieron click en " + unaPeliculaAMostrar.getTitle(), Toast.LENGTH_LONG).show();
+            activityActual.notificarClick(peliculaList, posicion);
+           // Toast.makeText(v.getContext(), "Hicieron click en " + unaPeliculaAMostrar.getTitle(), Toast.LENGTH_LONG).show();
 
 
 
         }
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        activityActual = (ComunicadorEntreFragmentYActivity) activity;
+    }
+
+    public interface ComunicadorEntreFragmentYActivity{
+
+        public void notificarClick(List<Pelicula> peliculas, Integer position);
     }
 }

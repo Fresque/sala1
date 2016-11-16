@@ -1,12 +1,12 @@
 package a2.t1mo.mobjav.a816.myapplication.Model;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by polialva on 26/10/16.
  */
-public class Pelicula {
+public class Pelicula implements Serializable{
 
     private String poster_path;
     private boolean adult;
