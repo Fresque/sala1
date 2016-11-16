@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
     }
 
     @Override
-    public void notificarClick(List<Pelicula> peliculas, Integer position) {
+    public void notificarClick(List<Pelicula> peliculas, int position) {
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("lista", (ArrayList) peliculas);

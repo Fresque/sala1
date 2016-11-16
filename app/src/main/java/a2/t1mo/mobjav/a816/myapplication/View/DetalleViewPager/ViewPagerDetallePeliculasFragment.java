@@ -23,11 +23,14 @@ public class ViewPagerDetallePeliculasFragment extends Fragment {
     ViewPager mViewPager;
 
     private ArrayList<Pelicula> listaDePeliculas;
+    int posicion;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         Bundle bundle = getArguments();
         listaDePeliculas = (ArrayList) bundle.getSerializable("lista");
+        posicion = bundle.getInt("posicion");
+
 
         View view = inflater.inflate(R.layout.fragment_viewpager_detalle, container, false);
 
@@ -36,6 +39,7 @@ public class ViewPagerDetallePeliculasFragment extends Fragment {
 
         mViewPager = (ViewPager) view.findViewById(R.id.viewPagerDetalle);
         mViewPager.setAdapter(detalleViewPagerAdapter);
+        mViewPager.setCurrentItem(posicion);
 
 
 

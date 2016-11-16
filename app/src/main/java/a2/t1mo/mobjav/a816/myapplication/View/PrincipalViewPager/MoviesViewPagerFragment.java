@@ -102,6 +102,6 @@ public class MoviesViewPagerFragment extends Fragment {
 
     public interface ComunicadorEntreFragmentYActivity{
 
-        public void notificarClick(List<Pelicula> peliculas, Integer position);
+        public void notificarClick(List<Pelicula> peliculas, int position);
     }
 }
