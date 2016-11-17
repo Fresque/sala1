@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +90,9 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
         public boolean onNavigationItemSelected(MenuItem item) {
 
 
-            if  (item.getTitle() == "Action"){
+            if  (item.getTitle().equals("Action")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_ACTION);
             }
 
@@ -104,18 +107,14 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
 
             if( item.getItemId() == R.id.tercerFragment){
                 unFragment = new TercerFragment();
-            }
-
-            fragmentTransaction.replace(R.id.aca_va_el_fragment, unFragment);
-            fragmentTransaction.commit();
-            drawerLayout.closeDrawers();*/
+            }*/
             return true;
         }
 
         private void iniciarFragmentPorGenero (String string){
 
             Bundle bundle = new Bundle();
-            bundle.putString("url", string);
+            bundle.putString("url", TMDBHelper.getMoviesByGenre(string));
 
             RecyclerHolderFragment recyclerHolderFragment = new RecyclerHolderFragment();
             recyclerHolderFragment.setArguments(bundle);
@@ -124,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.acaVaElFragment, recyclerHolderFragment);
             fragmentTransaction.commit();
+            drawerLayout.closeDrawers();
         }
 
     }
