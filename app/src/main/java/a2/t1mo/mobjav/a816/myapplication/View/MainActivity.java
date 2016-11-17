@@ -17,10 +17,11 @@ import a2.t1mo.mobjav.a816.myapplication.Controller.GenerosControler;
 import a2.t1mo.mobjav.a816.myapplication.Model.Generos;
 import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
 import a2.t1mo.mobjav.a816.myapplication.R;
-import a2.t1mo.mobjav.a816.myapplication.View.DetalleViewPager.DetalleViewPagerAdapter;
+import a2.t1mo.mobjav.a816.myapplication.Util.TMDBHelper;
 import a2.t1mo.mobjav.a816.myapplication.View.DetalleViewPager.ViewPagerDetallePeliculasFragment;
 import a2.t1mo.mobjav.a816.myapplication.View.PrincipalViewPager.MoviesViewPagerFragment;
 import a2.t1mo.mobjav.a816.myapplication.View.PrincipalViewPager.ViewPagerFragment;
+import a2.t1mo.mobjav.a816.myapplication.View.RecyclerViewPeliculas.RecyclerHolderFragment;
 
 public class MainActivity extends AppCompatActivity implements MoviesViewPagerFragment.ComunicadorEntreFragmentYActivity{
 
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
         @Override
         public boolean onNavigationItemSelected(MenuItem item) {
 
+
             /*android.app.FragmentManager fragmentManager = getFragmentManager();
             android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             Fragment unFragment = null;
@@ -109,6 +111,21 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
             drawerLayout.closeDrawers();*/
             return true;
         }
+
+        private void iniciarFragmentPorGenero (String string){
+
+            Bundle bundle = new Bundle();
+            bundle.putString("url", string);
+
+            RecyclerHolderFragment recyclerHolderFragment = new RecyclerHolderFragment();
+            recyclerHolderFragment.setArguments(bundle);
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.acaVaElFragment, recyclerHolderFragment);
+            fragmentTransaction.commit();
+        }
+
     }
 
     }

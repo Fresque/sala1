@@ -112,8 +112,8 @@ public class TMDBHelper {
         return baseUrl + "/genre/list?api_key=" +apiKey +"&language="+language;
     }
 
-    public static String getMoviesByGenre(String genre, Integer page,String language){
-        return baseUrl + "/discover/movie?api_key=" +apiKey +"&language="+language+"&page="+page.toString()+"&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres="+genre;
+    public static String getMoviesByGenre(String genre){
+        return baseUrl + "/discover/movie?api_key=" +apiKey +"&language=en-US&page="+1+"&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres="+genre;
     }
 
     public static String getTVByGenre(String genre, Integer page,String language){
