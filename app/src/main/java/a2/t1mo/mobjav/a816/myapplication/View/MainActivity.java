@@ -89,11 +89,11 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
         public boolean onNavigationItemSelected(MenuItem item) {
 
 
-            /*android.app.FragmentManager fragmentManager = getFragmentManager();
-            android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            Fragment unFragment = null;
+            if  (item.getTitle() == "Action"){
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_ACTION);
+            }
 
-            if( item.getItemId() == R.id.peliculasAccionFragment){
+            /*if( item.getItemId() == R.id.){
                 unFragment = new PeliculasAccion();
             }
 
