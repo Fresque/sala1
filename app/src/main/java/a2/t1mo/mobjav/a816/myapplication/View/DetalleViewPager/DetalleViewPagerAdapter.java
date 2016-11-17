@@ -1,6 +1,5 @@
 package a2.t1mo.mobjav.a816.myapplication.View.DetalleViewPager;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;

@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
     NavigationView navigationView;
     DrawerLayout drawerLayout;
 
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
 
         ViewPagerFragment viewPagerFragment = new ViewPagerFragment();
 
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.acaVaElFragment, viewPagerFragment);
         fragmentTransaction.commit();
 
@@ -78,8 +76,8 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
 
         viewPagerDetallePeliculasFragment.setArguments(bundle);
 
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.acaVaElFragment, viewPagerDetallePeliculasFragment);
         fragmentTransaction.commit();
     }

@@ -38,7 +38,6 @@ public class DetallePeliculaFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_detalle, container, false);
 
-
         //RECIBIR EL BUNLE
         Bundle bundle = getArguments();
         Pelicula pelicula = (Pelicula) bundle.getSerializable("pelicula");

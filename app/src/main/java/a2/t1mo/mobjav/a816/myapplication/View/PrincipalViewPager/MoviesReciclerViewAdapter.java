@@ -39,16 +39,16 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter implements V
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View viewDeLaCelda = inflater.inflate(R.layout.layout_celda_poster, parent, false);
-        HolderPeliculas holderPeliculas = new HolderPeliculas(viewDeLaCelda);
+        HolderParaPeliculas holderParaPeliculas = new HolderParaPeliculas(viewDeLaCelda);
         viewDeLaCelda.setOnClickListener(this);
-        return holderPeliculas;
+        return holderParaPeliculas;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position){
         Pelicula unaPelicula = listaDePeliculas.get(position);
-        HolderPeliculas holderPeliculas = (HolderPeliculas) holder;
-        holderPeliculas.movieBinder(unaPelicula);
+        HolderParaPeliculas holderParaPeliculas = (HolderParaPeliculas) holder;
+        holderParaPeliculas.movieBinder(unaPelicula);
     }
 
     public Pelicula devolverPelicula(int posicion){
@@ -71,11 +71,11 @@ public class MoviesReciclerViewAdapter extends RecyclerView.Adapter implements V
 
 
     //HOLDER
-    private class HolderPeliculas extends RecyclerView.ViewHolder{
+    private class HolderParaPeliculas extends RecyclerView.ViewHolder{
 
         private ImageView posterPelicula;
 
-        public HolderPeliculas(View v){
+        public HolderParaPeliculas(View v){
             super(v);
             posterPelicula = (ImageView) itemView.findViewById(R.id.imageViewPoster);
         }

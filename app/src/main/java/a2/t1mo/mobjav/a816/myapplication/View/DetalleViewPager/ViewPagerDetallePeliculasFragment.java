@@ -41,8 +41,6 @@ public class ViewPagerDetallePeliculasFragment extends Fragment {
         mViewPager.setAdapter(detalleViewPagerAdapter);
         mViewPager.setCurrentItem(posicion);
 
-
-
         return view;
     }
 }
