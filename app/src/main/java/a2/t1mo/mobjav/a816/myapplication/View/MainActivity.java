@@ -92,22 +92,81 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
 
             if  (item.getTitle().equals("Action")){
                 Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
-
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_ACTION);
             }
-
-            /*if( item.getItemId() == R.id.){
-                unFragment = new PeliculasAccion();
+            if  (item.getTitle().equals("Adventure")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_ADVENTURE);
+            }
+            if  (item.getTitle().equals("Animation")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_ANIMATION);
+            }
+            if  (item.getTitle().equals("Comedy")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_COMEDY);
+            }
+            if  (item.getTitle().equals("Crime")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_CRIME);
+            }
+            if  (item.getTitle().equals("Documentary")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_DOCUMENTARY);
+            }
+            if  (item.getTitle().equals("Drama")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_DRAMA);
+            }
+            if  (item.getTitle().equals("Family")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_FAMILY);
+            }
+            if  (item.getTitle().equals("Fantasy")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_FANTASY);
+            }
+            if  (item.getTitle().equals("History")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_HISTORY);
+            }
+            if  (item.getTitle().equals("Horror")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_HORROR);
+            }
+            if  (item.getTitle().equals("Music")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_MUSIC);
+            }
+            if  (item.getTitle().equals("Mystery")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_MYSTERY);
+            }
+            if  (item.getTitle().equals("Romance")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_ROMANCE);
+            }
+            if  (item.getTitle().equals("Science Fiction")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_SCIENCE_FICTION);
+            }
+            if  (item.getTitle().equals("TV Movie")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_SCIENCE_TV_MOVIE);
+            }
+            if  (item.getTitle().equals("Triller")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_SCIENCE_THRILLER);
+            }
+            if  (item.getTitle().equals("War")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_SCIENCE_WAR);
+            }
+            if  (item.getTitle().equals("Western")){
+                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_SCIENCE_WESTERN);
             }
 
-            if( item.getItemId() == R.id.segundoFragment){
-                unFragment = new SegundoFragment();
-
-            }
-
-            if( item.getItemId() == R.id.tercerFragment){
-                unFragment = new TercerFragment();
-            }*/
             return true;
         }
 
