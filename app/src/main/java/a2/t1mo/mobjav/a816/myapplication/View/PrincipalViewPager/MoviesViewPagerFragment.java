@@ -89,8 +89,6 @@ public class MoviesViewPagerFragment extends Fragment {
             activityActual.notificarClick(peliculaList, posicion);
            // Toast.makeText(v.getContext(), "Hicieron click en " + unaPeliculaAMostrar.getTitle(), Toast.LENGTH_LONG).show();
 
-
-
         }
     }
 
@@ -104,4 +102,5 @@ public class MoviesViewPagerFragment extends Fragment {
 
         public void notificarClick(List<Pelicula> peliculas, int position);
     }
+
 }

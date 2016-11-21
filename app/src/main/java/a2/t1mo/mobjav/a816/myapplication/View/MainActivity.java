@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
         setContentView(R.layout.activity_main);
 
 
+
         ViewPagerFragment viewPagerFragment = new ViewPagerFragment();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.acaVaElFragment, viewPagerDetallePeliculasFragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
@@ -181,12 +183,12 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.acaVaElFragment, recyclerHolderFragment);
+            fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
             drawerLayout.closeDrawers();
         }
 
     }
-
-    }
+}
 
 

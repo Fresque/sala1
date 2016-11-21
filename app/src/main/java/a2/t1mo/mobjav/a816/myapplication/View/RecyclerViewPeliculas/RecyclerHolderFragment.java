@@ -58,7 +58,4 @@ public class RecyclerHolderFragment extends Fragment {
 
         return view;
     }
-
-
-
 }

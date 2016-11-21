@@ -27,7 +27,7 @@ public class ViewPagerFragment extends Fragment {
 
 
         // SETEA EL VIEW PAGER QUE EN UN FUTURO VA A CONTENER LOS DIFERENTES RECYCLERS
-        moviesViewPagerAdapter = new MoviesViewPagerAdapter(getFragmentManager());
+        moviesViewPagerAdapter = new MoviesViewPagerAdapter(getChildFragmentManager());
 
         mViewPager = (ViewPager) view.findViewById(R.id.viewPagerPrincipal);
         mViewPager.setAdapter(moviesViewPagerAdapter);
