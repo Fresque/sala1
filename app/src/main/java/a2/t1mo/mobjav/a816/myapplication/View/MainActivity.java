@@ -11,6 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,13 +30,18 @@ import a2.t1mo.mobjav.a816.myapplication.View.RecyclerViewPeliculas.RecyclerHold
 
 public class MainActivity extends AppCompatActivity implements MoviesViewPagerFragment.ComunicadorEntreFragmentYActivity{
 
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "bpIfsLARachzlEVdskss6jOZR";
+    private static final String TWITTER_SECRET = "CEWWlEryD2NMMTL99GYZLeY6zR7UzYnzqF4DBN6ACIxFcxCiGp";
+
     NavigationView navigationView;
     DrawerLayout drawerLayout;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
         setContentView(R.layout.activity_main);
 
 
@@ -90,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
 
         @Override
         public boolean onNavigationItemSelected(MenuItem item) {
-
 
             if  (item.getTitle().equals("Action")){
                 Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
@@ -187,8 +195,5 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
             fragmentTransaction.commit();
             drawerLayout.closeDrawers();
         }
-
     }
 }
-
-

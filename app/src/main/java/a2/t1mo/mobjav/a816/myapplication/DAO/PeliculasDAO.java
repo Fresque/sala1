@@ -10,37 +10,39 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
 import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaListContainer;
-import a2.t1mo.mobjav.a816.myapplication.Util.ResultListener;
 import a2.t1mo.mobjav.a816.myapplication.Util.HTTPConnectionManager;
+import a2.t1mo.mobjav.a816.myapplication.Util.ResultListener;
 
 /**
- * Created by joe on 10/31/16.
+ * Created by marti on 11/22/2016.
  */
+
 public class PeliculasDAO {
 
-    public void obtenerMoviesJSon(Context context, ResultListener<PeliculaListContainer> resultListenerController, String url){
+    public void obtenerMovieJSon(Context context, ResultListener<Pelicula> resultListenerController, String url){
 
-        LeerdeJSONSAsynctask readFromJSONAsyncTask = new LeerdeJSONSAsynctask(context, resultListenerController, url);
+        LevantarPeliculaDeJSONAsyncTask readFromJSONAsyncTask = new LevantarPeliculaDeJSONAsyncTask(context, resultListenerController, url);
         readFromJSONAsyncTask.execute();
     }
 
-    private class LeerdeJSONSAsynctask extends AsyncTask<String, Void, PeliculaListContainer>{
+    private class LevantarPeliculaDeJSONAsyncTask extends AsyncTask<String, Void, Pelicula> {
 
         private Context context;
-        private ResultListener<PeliculaListContainer> resultListenerController;
+        private ResultListener<Pelicula> resultListenerController;
         private String url;
 
-        public LeerdeJSONSAsynctask(Context context, ResultListener<PeliculaListContainer> resultListenerController, String url) {
+        public LevantarPeliculaDeJSONAsyncTask(Context context, ResultListener<Pelicula> resultListenerController, String url) {
             this.context = context;
             this.resultListenerController = resultListenerController;
             this.url = url;
         }
 
         @Override
-        protected PeliculaListContainer doInBackground(String... strings) {
+        protected Pelicula doInBackground(String... strings) {
 
-            PeliculaListContainer listaDePeliculas = null;
+            Pelicula pelicula = null;
 
             try {
                 //BUSQUEDA EN INTERNET
@@ -50,7 +52,7 @@ public class PeliculasDAO {
                 //PARSEO GSON
                 BufferedReader bufferReaderIn = new BufferedReader(new InputStreamReader(newsJson));
                 Gson gson = new Gson();
-                listaDePeliculas = gson.fromJson(bufferReaderIn, PeliculaListContainer.class);
+                pelicula = gson.fromJson(bufferReaderIn, Pelicula.class);
 
 
             } catch (IOException e) {
@@ -58,14 +60,12 @@ public class PeliculasDAO {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return listaDePeliculas;
+            return pelicula;
         }
 
         @Override
-        protected void onPostExecute(PeliculaListContainer listaDePeliculas) {
-            resultListenerController.finish(listaDePeliculas);
+        protected void onPostExecute(Pelicula pelicula) {
+            resultListenerController.finish(pelicula);
         }
     }
-
-
 }

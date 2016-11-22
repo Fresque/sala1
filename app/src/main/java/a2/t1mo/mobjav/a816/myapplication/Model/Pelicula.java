@@ -23,6 +23,158 @@ public class Pelicula implements Serializable{
     private boolean video;
     private float vote_average;
 
+    private int budget;
+    private String homepage;
+    private String imdb_id;
+    private int revenue;
+    private int runtime;
+    private belongs_to_collection belongs_to_collection;
+    private List<genres> genres;
+    private List<production_companies> production_companies;
+    private contenedorDeVideos videos;
+    private contenedorDeReviews reviews;
+    private contenedorDeCreditos credits;
+
+
+    //Clases para las variables complejas
+    private class belongs_to_collection{
+        int id;
+        String name;
+        String poster_path;
+        String backdrop_path;
+    }
+
+    private class genres{
+        int id;
+        String name;
+    }
+
+    private class production_companies{
+        String name;
+        int id;
+    }
+
+    private class contenedorDeVideos {
+        List<videos> results ;
+
+        public List<Pelicula.videos> getResults() {
+            return results;
+        }
+    }
+
+    private class videos{
+        String key;
+        String name;
+        String type;
+
+        public String getKey() {
+            return key;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getType() {
+            return type;
+        }
+    }
+
+    public List<videos> getVideos(){
+        return videos.getResults();
+    }
+
+    public String getKey(int position){
+        return videos.getResults().get(position).getKey();
+    }
+
+    public  String getVideoName(int position){
+        return videos.getResults().get(position).getName();
+    }
+
+    public String getType(int position){
+        return videos.getResults().get(position).getType();
+    }
+
+
+    private class contenedorDeReviews{
+        List<reviews> results;
+
+        public List<Pelicula.reviews> getResults() {
+            return results;
+        }
+
+
+    }
+
+    private class reviews{
+        String id;
+        String author;
+        String content;
+
+        public String getId() {
+            return id;
+        }
+
+        public String getAuthor() {
+            return author;
+        }
+
+        public String getContent() {
+            return content;
+        }
+    }
+
+    public String getId(int position){
+        return reviews.getResults().get(position).getId();
+    }
+
+    public String getAuthor(int position){
+        return reviews.getResults().get(position).getAuthor();
+    }
+
+    public String getContent(int position){
+        return reviews.getResults().get(position).getContent();
+    }
+
+
+    private class contenedorDeCreditos{
+        List<credits> cast;
+
+        public List<Pelicula.credits> getResults() {
+            return cast;
+        }
+    }
+
+    private class credits{
+        String character;
+        String name;
+        String profile_path;
+
+        public String getProfile_path() {
+            return profile_path;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getCharacter() {
+            return character;
+        }
+    }
+
+    public String getCharacter(int position){
+        return credits.getResults().get(position).getCharacter();
+    }
+
+    public String getCreditsName(int position){
+        return credits.getResults().get(position).getName();
+    }
+
+    public String getProfilePath(int position){
+        return credits.getResults().get(position).getProfile_path();
+    }
 
     public String getPoster_path() {
         return poster_path;
@@ -134,6 +286,46 @@ public class Pelicula implements Serializable{
 
     public void setVote_average(float vote_average) {
         this.vote_average = vote_average;
+    }
+
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
+    }
+
+    public String getHomepage() {
+        return homepage;
+    }
+
+    public void setHomepage(String homepage) {
+        this.homepage = homepage;
+    }
+
+    public String getImdb_id() {
+        return imdb_id;
+    }
+
+    public void setImdb_id(String imdb_id) {
+        this.imdb_id = imdb_id;
+    }
+
+    public int getRevenue() {
+        return revenue;
+    }
+
+    public void setRevenue(int revenue) {
+        this.revenue = revenue;
+    }
+
+    public int getRuntime() {
+        return runtime;
+    }
+
+    public void setRuntime(int runtime) {
+        this.runtime = runtime;
     }
 
 }

@@ -1,6 +1,5 @@
 package a2.t1mo.mobjav.a816.myapplication.View.RecyclerViewPeliculas;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -9,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +45,7 @@ public class RecyclerHolderFragment extends Fragment {
         recyclerView.setAdapter(adaptadorDePeliculas);
 
         PeliculaController peliculaController =  new PeliculaController();
-        peliculaController.obtenerPeliculas(getContext(), new ResultListener<PeliculaListContainer>() {
+        peliculaController.obtenerListaPeliculas(getContext(), new ResultListener<PeliculaListContainer>() {
             @Override
             public void finish(PeliculaListContainer resultado) {
                 peliculaList = resultado.getResults();

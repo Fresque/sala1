@@ -55,7 +55,7 @@ public class MoviesViewPagerFragment extends Fragment {
 
         //CARGA CADA FRAGMENT AL OBTENER LAS LISTAS
         PeliculaController peliculaController = new PeliculaController();
-        peliculaController.obtenerPeliculas(getContext(), new ResultListener<PeliculaListContainer>() {
+        peliculaController.obtenerListaPeliculas(getContext(), new ResultListener<PeliculaListContainer>() {
             @Override
             public void finish(PeliculaListContainer resultado) {
 

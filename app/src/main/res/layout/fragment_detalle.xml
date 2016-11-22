@@ -42,6 +42,51 @@
         android:text="Sinopsis"
         android:textSize="20dp" />
 
+    <TextView
+        android:id="@+id/textViewBudget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="Budget"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textViewHomepage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="Homepage"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textViewRevenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="Revenue"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textViewRuntime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="Runtime"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textViewYoutube"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="YouTube"
+        android:textSize="20dp" />
+
     <android.support.design.widget.FloatingActionButton
         android:layout_width="50dp"
         android:layout_height="wrap_content"
