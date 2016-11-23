@@ -28,7 +28,7 @@ import a2.t1mo.mobjav.a816.myapplication.View.PrincipalViewPager.MoviesViewPager
 import a2.t1mo.mobjav.a816.myapplication.View.PrincipalViewPager.ViewPagerFragment;
 import a2.t1mo.mobjav.a816.myapplication.View.RecyclerViewPeliculas.RecyclerHolderFragment;
 
-public class MainActivity extends AppCompatActivity implements MoviesViewPagerFragment.ComunicadorEntreFragmentYActivity{
+public class  MainActivity extends AppCompatActivity implements MoviesViewPagerFragment.ComunicadorEntreFragmentYActivity{
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "bpIfsLARachzlEVdskss6jOZR";
