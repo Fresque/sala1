@@ -64,27 +64,25 @@ public class DetallePeliculaFragment extends Fragment {
 
 
         final PeliculaController peliculaController = new PeliculaController();
-        peliculaController.obtenerListaPeliculas(getContext(), new ResultListener<PeliculaListContainer>() {
+        peliculaController.obtenerPelicula(getContext(), new ResultListener<Pelicula>() {
             @Override
-            public void finish(PeliculaListContainer resultado) {
-                peliculaList = resultado.getResults();
-                pelicula = peliculaList.get(0);
+            public void finish(Pelicula resultado) {
+                pelicula = resultado;
 
                 Picasso.with(getContext()).load("https://image.tmdb.org/t/p/w500/" + pelicula.getBackdrop_path()).into(imageViewBackdrop);
                 textViewTitulo.setText(pelicula.getTitle());
                 textViewReleaseDate.setText(pelicula.getRelease_date());
                 textViewSinopsis.setText(pelicula.getOverview());
-                textViewBudget.setText(pelicula.getBudget());
+                textViewBudget.setText("Budget: "+pelicula.getBudget());
                 textViewHomepage.setText(pelicula.getHomepage());
-                textViewRevenue.setText(pelicula.getRevenue());
-                textViewRuntime.setText(pelicula.getRuntime());
-                //textViewYoutube.setText(pelicula.getKey(0));
+                textViewRevenue.setText("Revenue: "+pelicula.getRevenue());
+                textViewRuntime.setText("Runtime: "+pelicula.getRuntime());
+                textViewYoutube.setText(pelicula.getKey(0));;
 
 
             }
         },url);
 
-        //POPULAR CON LA INFO DEL BUNDLE
 
         return view;
     }

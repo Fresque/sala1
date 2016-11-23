@@ -22,7 +22,6 @@ public class Pelicula implements Serializable{
     private int vote_count;
     private boolean video;
     private float vote_average;
-
     private int budget;
     private String homepage;
     private String imdb_id;
