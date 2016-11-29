@@ -18,11 +18,11 @@ import a2.t1mo.mobjav.a816.myapplication.R;
  * Created by marti on 11/17/2016.
  */
 
-public class AdaptadorDePeliculas extends RecyclerView.Adapter {
+public class AdaptadorDePeliculas extends RecyclerView.Adapter implements View.OnClickListener{
 
     private List<Pelicula> listaDePeliculas;
     private Context context;
-
+    private View.OnClickListener listener;
 
     public AdaptadorDePeliculas(Context context){
         this.context = context;
@@ -37,6 +37,7 @@ public class AdaptadorDePeliculas extends RecyclerView.Adapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View viewDeLaCelda = inflater.inflate(R.layout.layout_celda_poster, parent, false);
         HolderPeliculas holderPeliculas = new HolderPeliculas(viewDeLaCelda);
+        viewDeLaCelda.setOnClickListener(this);
         return holderPeliculas;
     }
 
@@ -49,6 +50,15 @@ public class AdaptadorDePeliculas extends RecyclerView.Adapter {
 
     public Pelicula devolverPelicula(int posicion){
         return listaDePeliculas.get(posicion);
+    }
+
+    //Setea el listener
+    public void setListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+    //Seteaa tambien el listener
+    public void onClick(View v){
+        listener.onClick(v);
     }
 
     @Override

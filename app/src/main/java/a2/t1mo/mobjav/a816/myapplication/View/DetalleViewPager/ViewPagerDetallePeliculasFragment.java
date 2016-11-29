@@ -35,7 +35,7 @@ public class ViewPagerDetallePeliculasFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_viewpager_detalle, container, false);
 
         // SETEA EL VIEW PAGER QUE EN UN FUTURO VA A CONTENER LOS DIFERENTES RECYCLERS
-        detalleViewPagerAdapter = new DetalleViewPagerAdapter(getFragmentManager(), listaDePeliculas);
+        detalleViewPagerAdapter = new DetalleViewPagerAdapter(getChildFragmentManager(), listaDePeliculas);
 
         mViewPager = (ViewPager) view.findViewById(R.id.viewPagerDetalle);
         mViewPager.setAdapter(detalleViewPagerAdapter);
@@ -43,4 +43,5 @@ public class ViewPagerDetallePeliculasFragment extends Fragment {
 
         return view;
     }
+
 }

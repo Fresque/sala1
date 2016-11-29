@@ -1,4 +1,4 @@
-package a2.t1mo.mobjav.a816.myapplication.Util;
+/*package a2.t1mo.mobjav.a816.myapplication.Util;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,9 +11,9 @@ import java.util.List;
 
 import a2.t1mo.mobjav.a816.myapplication.Model.Pelicula;
 
-/**
+*//**
  * Created by marti on 11/21/2016.
- */
+ *//*
 
 public class CargadorDeDB extends SQLiteOpenHelper {
 
@@ -162,4 +162,4 @@ public class CargadorDeDB extends SQLiteOpenHelper {
 
         return person;
     }
-}
+}*/

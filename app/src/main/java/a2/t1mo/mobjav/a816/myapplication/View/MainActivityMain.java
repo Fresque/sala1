@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
+
+import a2.t1mo.mobjav.a816.myapplication.View.DetalleViewPager.DetallePeliculaFragment;
 import io.fabric.sdk.android.Fabric;
 
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ import a2.t1mo.mobjav.a816.myapplication.View.PrincipalViewPager.MoviesViewPager
 import a2.t1mo.mobjav.a816.myapplication.View.PrincipalViewPager.ViewPagerFragment;
 import a2.t1mo.mobjav.a816.myapplication.View.RecyclerViewPeliculas.RecyclerHolderFragment;
 
-public class MainActivity extends AppCompatActivity implements MoviesViewPagerFragment.ComunicadorEntreFragmentYActivity{
+public class MainActivityMain extends AppCompatActivity implements MoviesViewPagerFragment.ComunicadorEntreFragmentYActivityMain,RecyclerHolderFragment.ComunicadorEntreFragmentYActivityRecycler,DetallePeliculaFragment.IrAVideo {
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "bpIfsLARachzlEVdskss6jOZR";
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
     }
 
     @Override
-    public void notificarClick(List<Pelicula> peliculas, int position) {
+    public void notificarClickMain(List<Pelicula> peliculas, int position) {
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("lista", (ArrayList) peliculas);
@@ -95,85 +97,119 @@ public class MainActivity extends AppCompatActivity implements MoviesViewPagerFr
         fragmentTransaction.commit();
     }
 
+    @Override
+    public void notificarClickRecycler(List<Pelicula> peliculas, int position) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("lista", (ArrayList) peliculas);
+        bundle.putInt("posicion", position);
+
+        ViewPagerDetallePeliculasFragment viewPagerDetallePeliculasFragment = new ViewPagerDetallePeliculasFragment();
+
+        viewPagerDetallePeliculasFragment.setArguments(bundle);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.acaVaElFragment, viewPagerDetallePeliculasFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    public void llamarVideo(String keyVideo) {
+        Bundle bundle = new Bundle();
+        bundle.putString("keyVideo", keyVideo);
+
+        VideoFragment videoFragment = new VideoFragment();
+
+        videoFragment.setArguments(bundle);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.acaVaElFragment, videoFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+    }
+
     private class ListenerNavigationView implements NavigationView.OnNavigationItemSelectedListener{
 
         @Override
         public boolean onNavigationItemSelected(MenuItem item) {
 
             if  (item.getTitle().equals("Action")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_ACTION);
             }
             if  (item.getTitle().equals("Adventure")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_ADVENTURE);
             }
             if  (item.getTitle().equals("Animation")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_ANIMATION);
             }
             if  (item.getTitle().equals("Comedy")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_COMEDY);
             }
             if  (item.getTitle().equals("Crime")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_CRIME);
             }
             if  (item.getTitle().equals("Documentary")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_DOCUMENTARY);
             }
             if  (item.getTitle().equals("Drama")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_DRAMA);
             }
             if  (item.getTitle().equals("Family")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_FAMILY);
             }
             if  (item.getTitle().equals("Fantasy")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_FANTASY);
             }
             if  (item.getTitle().equals("History")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_HISTORY);
             }
             if  (item.getTitle().equals("Horror")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_HORROR);
             }
             if  (item.getTitle().equals("Music")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_MUSIC);
             }
             if  (item.getTitle().equals("Mystery")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_MYSTERY);
             }
             if  (item.getTitle().equals("Romance")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_ROMANCE);
             }
             if  (item.getTitle().equals("Science Fiction")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_SCIENCE_FICTION);
             }
             if  (item.getTitle().equals("TV Movie")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_SCIENCE_TV_MOVIE);
             }
             if  (item.getTitle().equals("Triller")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_SCIENCE_THRILLER);
             }
             if  (item.getTitle().equals("War")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_SCIENCE_WAR);
             }
             if  (item.getTitle().equals("Western")){
-                Toast.makeText(MainActivity.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivityMain.this, "Hicieron click en " + item.getTitle(), Toast.LENGTH_LONG).show();
                 iniciarFragmentPorGenero(TMDBHelper.MOVIE_GENRE_SCIENCE_WESTERN);
             }
 

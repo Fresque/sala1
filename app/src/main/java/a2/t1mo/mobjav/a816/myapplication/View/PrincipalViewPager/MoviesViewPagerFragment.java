@@ -23,11 +23,11 @@ import a2.t1mo.mobjav.a816.myapplication.Util.ResultListener;
  * Created by marti on 11/3/2016.
  */
 
-public class MoviesViewPagerFragment extends Fragment {
+public class MoviesViewPagerFragment extends Fragment{
     RecyclerView moviesRecyclerView;
     MoviesReciclerViewAdapter adapter;
     List<Pelicula> peliculaList;
-    ComunicadorEntreFragmentYActivity activityActual;
+    ComunicadorEntreFragmentYActivityMain activityActual;
 
 
     public static MoviesViewPagerFragment nuevoFragment(String url){
@@ -72,7 +72,7 @@ public class MoviesViewPagerFragment extends Fragment {
 
         adapter = new MoviesReciclerViewAdapter(getActivity());
         adapter.setListaDePeliculas(peliculaList);
-        adapter.setListener(new ListenerDeClicks());
+        adapter.setListener(new ListenerDeClicksRecycler());
 
         moviesRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3, LinearLayoutManager.VERTICAL, false));
         moviesRecyclerView.setAdapter(adapter);
@@ -81,12 +81,13 @@ public class MoviesViewPagerFragment extends Fragment {
         return fragmentView;
     }
 
-    private class ListenerDeClicks implements View.OnClickListener {
+
+    private class ListenerDeClicksRecycler implements View.OnClickListener {
 
         @Override
         public void onClick(View v) {
             int posicion = moviesRecyclerView.getChildAdapterPosition((v));
-            activityActual.notificarClick(peliculaList, posicion);
+            activityActual.notificarClickMain(peliculaList, posicion);
            // Toast.makeText(v.getContext(), "Hicieron click en " + unaPeliculaAMostrar.getTitle(), Toast.LENGTH_LONG).show();
 
         }
@@ -95,12 +96,12 @@ public class MoviesViewPagerFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        activityActual = (ComunicadorEntreFragmentYActivity) activity;
+        activityActual = (ComunicadorEntreFragmentYActivityMain) activity;
     }
 
-    public interface ComunicadorEntreFragmentYActivity{
+    public interface ComunicadorEntreFragmentYActivityMain {
 
-        public void notificarClick(List<Pelicula> peliculas, int position);
+        public void notificarClickMain(List<Pelicula> peliculas, int position);
     }
 
 }

@@ -1,8 +1,11 @@
+/*
 package a2.t1mo.mobjav.a816.myapplication.View;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.Callback;
@@ -21,33 +24,35 @@ public class TwitterLogin extends AppCompatActivity {
     String token = authToken.token;
     String secret = authToken.secret;
 
-    TwitterLoginButton loginButton;
+    private TwitterLoginButton loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_twitter_login);
 
         loginButton = (TwitterLoginButton) findViewById(R.id.login_button);
         loginButton.setCallback(new Callback<TwitterSession>() {
             @Override
             public void success(Result<TwitterSession> result) {
-                // Do something with result, which provides a TwitterSession for making API calls
-                Intent unIntent = new Intent(TwitterLogin.this, MainActivity.class);
+                // The TwitterSession is also available through:
+                // Twitter.getInstance().core.getSessionManager().getActiveSession()
+                TwitterSession session = result.data;
+                // TODO: Remove toast and use the TwitterSession's userID
+                // with your app's user model
+                String msg = "@" + session.getUserName() + " logged in! (#" + session.getUserId() + ")";
+                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
 
-                Bundle unBundle = new Bundle();
-                unBundle.putString("token", token);
-                unBundle.putString("secret", secret);
-                unIntent.putExtras(unBundle);
-
-                startActivity(unIntent);
+                Intent intent = new Intent(TwitterLogin.this, MainActivity.class);
+                startActivity(intent);
             }
-
             @Override
             public void failure(TwitterException exception) {
-                // Do something on failure
+                Log.d("TwitterKit", "Login with Twitter failure", exception);
             }
         });
+
     }
 
     @Override
@@ -58,3 +63,4 @@ public class TwitterLogin extends AppCompatActivity {
         loginButton.onActivityResult(requestCode, resultCode, data);
     }
 }
+*/
