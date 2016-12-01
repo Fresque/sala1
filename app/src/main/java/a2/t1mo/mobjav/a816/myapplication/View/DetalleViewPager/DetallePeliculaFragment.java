@@ -41,6 +41,7 @@ public class DetallePeliculaFragment extends Fragment{
     AdaptadorDePeliculas adaptadorDePeliculas;
 
     List<Pelicula>recoList;
+
     IrAVideo interfaceVideo;
     FloatingActionButton floatingActionButton;
 

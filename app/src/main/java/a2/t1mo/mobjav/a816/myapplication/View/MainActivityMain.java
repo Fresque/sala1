@@ -33,8 +33,8 @@ import a2.t1mo.mobjav.a816.myapplication.View.RecyclerViewPeliculas.RecyclerHold
 public class MainActivityMain extends AppCompatActivity implements MoviesViewPagerFragment.ComunicadorEntreFragmentYActivityMain,RecyclerHolderFragment.ComunicadorEntreFragmentYActivityRecycler,DetallePeliculaFragment.IrAVideo {
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "bpIfsLARachzlEVdskss6jOZR";
-    private static final String TWITTER_SECRET = "CEWWlEryD2NMMTL99GYZLeY6zR7UzYnzqF4DBN6ACIxFcxCiGp";
+    //private static final String TWITTER_KEY = "bpIfsLARachzlEVdskss6jOZR";
+    //private static final String TWITTER_SECRET = "CEWWlEryD2NMMTL99GYZLeY6zR7UzYnzqF4DBN6ACIxFcxCiGp";
 
     NavigationView navigationView;
     DrawerLayout drawerLayout;
@@ -42,8 +42,8 @@ public class MainActivityMain extends AppCompatActivity implements MoviesViewPag
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        Fabric.with(this, new Twitter(authConfig));
+        //TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        //Fabric.with(this, new Twitter(authConfig));
         setContentView(R.layout.activity_main);
 
 
