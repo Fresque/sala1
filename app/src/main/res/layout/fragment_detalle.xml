@@ -36,6 +36,15 @@
                     android:text="Titulo"
                     android:textSize="30dp"/>
 
+                <TextView
+                    android:id="@+id/textViewRating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="15dp"
+                    android:text="Rating"
+                    android:textSize="20dp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -72,7 +81,17 @@
                         android:textSize="20dp"
                         android:layout_weight="34.46"/>
                 </LinearLayout>
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageViewMiniPoster"
+                    android:src="@drawable/dp3"
+                    android:scaleType="fitCenter"
+                    android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/textViewSinopsis"
                     android:layout_width="match_parent"
@@ -80,6 +99,16 @@
                     android:layout_gravity="center_horizontal"
                     android:padding="15dp"
                     android:text="Sinopsis"
+                    android:textSize="20dp"
+                    android:layout_weight="2"/>
+</LinearLayout>
+                <TextView
+                    android:id="@+id/textViewRevenue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="15dp"
+                    android:text="Revenue"
                     android:textSize="20dp" />
 
             </LinearLayout>
@@ -92,54 +121,9 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageViewMiniPoster"
-                    android:src="@drawable/dp3"
-                    android:scaleType="fitCenter" />
 
-                <TextView
-                    android:id="@+id/textViewRating"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:padding="15dp"
-                    android:text="Rating"
-                    android:textSize="20dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_toRightOf="@+id/imageViewMiniPoster"
-                    android:layout_toEndOf="@+id/imageViewMiniPoster" />
 
-                <TextView
-                    android:id="@+id/textViewHomepage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:padding="15dp"
-                    android:text="Homepage"
-                    android:textSize="20dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_toRightOf="@+id/imageViewMiniPoster"
-                    android:layout_toEndOf="@+id/imageViewMiniPoster" />
 
-                <TextView
-                    android:id="@+id/textViewRevenue"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:padding="15dp"
-                    android:text="Revenue"
-                    android:textSize="20dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_toRightOf="@+id/imageViewMiniPoster"
-                    android:layout_toEndOf="@+id/imageViewMiniPoster" />
 
             </RelativeLayout>
 

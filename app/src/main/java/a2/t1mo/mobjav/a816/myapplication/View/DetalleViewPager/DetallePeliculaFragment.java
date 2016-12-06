@@ -78,7 +78,6 @@ public class DetallePeliculaFragment extends Fragment{
         final TextView textViewReleaseDate = (TextView) view.findViewById(R.id.textViewReleaseDate);
         final TextView textViewSinopsis = (TextView) view.findViewById(R.id.textViewSinopsis);
         final TextView textViewRating = (TextView) view.findViewById(R.id.textViewRating);
-        final TextView textViewHomepage = (TextView) view.findViewById(R.id.textViewHomepage);
         final TextView textViewRevenue = (TextView) view.findViewById(R.id.textViewRevenue);
         final TextView textViewRuntime = (TextView) view.findViewById(R.id.textViewRuntime);
         final ImageView imageViewBackdrop = (ImageView) view.findViewById(R.id.imagenFondoDetalle);
@@ -98,7 +97,6 @@ public class DetallePeliculaFragment extends Fragment{
                 textViewReleaseDate.setText(pelicula.getRelease_date());
                 textViewSinopsis.setText(pelicula.getOverview());
                 textViewRating.setText("Rating: "+pelicula.getVote_average());
-                textViewHomepage.setText(Html.fromHtml(pelicula.getHomepage()));
                 textViewRevenue.setText("Revenue: "+pelicula.getRevenue());
                 textViewRuntime.setText("Runtime: "+pelicula.getRuntime());
 
