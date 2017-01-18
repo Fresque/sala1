@@ -1,6 +1,5 @@
 package a2.t1mo.mobjav.a816.myapplication.View;
 
-
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,11 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.twitter.sdk.android.Twitter;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-
 import a2.t1mo.mobjav.a816.myapplication.View.DetalleViewPager.DetallePeliculaFragment;
-import io.fabric.sdk.android.Fabric;
 
 import java.util.ArrayList;
 import java.util.List;

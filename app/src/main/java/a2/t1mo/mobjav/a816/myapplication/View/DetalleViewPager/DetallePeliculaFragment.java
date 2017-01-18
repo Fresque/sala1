@@ -24,7 +24,6 @@ import a2.t1mo.mobjav.a816.myapplication.Model.PeliculaListContainer;
 import a2.t1mo.mobjav.a816.myapplication.R;
 import a2.t1mo.mobjav.a816.myapplication.Util.ResultListener;
 import a2.t1mo.mobjav.a816.myapplication.View.RecyclerViewPeliculas.AdaptadorDePeliculas;
-import a2.t1mo.mobjav.a816.myapplication.View.RecyclerViewPeliculas.RecyclerHolderFragment;
 
 
 /**
@@ -40,7 +39,7 @@ public class DetallePeliculaFragment extends Fragment{
     RecyclerView recyclerView;
     AdaptadorDePeliculas adaptadorDePeliculas;
 
-    List<Pelicula>recoList;
+    List<Pelicula> recomendadosList;
 
     IrAVideo interfaceVideo;
     FloatingActionButton floatingActionButton;
@@ -102,14 +101,14 @@ public class DetallePeliculaFragment extends Fragment{
 
 
 
-                String urlReco = "https://api.themoviedb.org/3/movie/"+id+"/similar?api_key=01a81d06ce53d8e3ef9e380989ea4f24&language=en-US";
+                String urlRecomendados = "https://api.themoviedb.org/3/movie/"+id+"/similar?api_key=01a81d06ce53d8e3ef9e380989ea4f24&language=en-US";
 
-                recoList = new ArrayList<>();
+                recomendadosList = new ArrayList<>();
                 recyclerView = (RecyclerView) view.findViewById(R.id.recyclerSugerencias);
                 recyclerView.setHasFixedSize(true);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
                 adaptadorDePeliculas = new AdaptadorDePeliculas(getActivity());
-                adaptadorDePeliculas.setListaDePeliculas(recoList);
+                adaptadorDePeliculas.setListaDePeliculas(recomendadosList);
 
                 recyclerView.setAdapter(adaptadorDePeliculas);
 
@@ -117,11 +116,11 @@ public class DetallePeliculaFragment extends Fragment{
                 peliculaController.obtenerListaPeliculas(getContext(), new ResultListener<PeliculaListContainer>() {
                     @Override
                     public void finish(PeliculaListContainer resultado) {
-                        recoList = resultado.getResults();
-                        adaptadorDePeliculas.setListaDePeliculas(recoList);
+                        recomendadosList = resultado.getResults();
+                        adaptadorDePeliculas.setListaDePeliculas(recomendadosList);
                         adaptadorDePeliculas.notifyDataSetChanged();
                     }
-                },urlReco);
+                },urlRecomendados);
             }
         },url);
 

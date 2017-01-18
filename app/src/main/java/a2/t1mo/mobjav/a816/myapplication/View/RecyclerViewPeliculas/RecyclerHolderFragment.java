@@ -33,11 +33,11 @@ public class RecyclerHolderFragment extends Fragment {
 
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
-
-
         View view = inflater.inflate(R.layout.fragment_recycler, container, false);
+
         Bundle bundle = getArguments();
         String url = bundle.getString("url");
+
         peliculaList = new ArrayList<>();
         recyclerView = (RecyclerView) view.findViewById(R.id.fragmentRecycler);
         recyclerView.setHasFixedSize(true);
